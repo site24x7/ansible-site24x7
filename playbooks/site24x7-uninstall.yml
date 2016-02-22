@@ -1,0 +1,7 @@
+---
+- name: Uninstall Site24x7 server monitoring agent
+  hosts: hostname
+  remote_user: root
+  tasks:
+     - name: Running uninstall agent command
+       shell: /opt/site24x7/monagent/bin/uninstall removes=/opt/site24x7/monagent/bin/monagent
