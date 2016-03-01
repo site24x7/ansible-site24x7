@@ -1,11 +1,7 @@
-# ansible-site24x7
-
-
-Ansible playbook to bulk install Site24x7 monitoring agent.
+Bulk deployment of Site24x7 Linux agent using Ansible
 ===========
 
-This Ansible playbook installs Site24x7 server monitoring agent on Linux platforms. This 
-requires Site24x7 account to use. Sign Up Now for a Free Trial  
+Bulk deployment using Ansible installs Site24x7 Server Monitoring agent on Linux platforms. Please create a Site24x7 account to install the Linux agent using Ansible. Sign Up Now for a Free Trial! 
 
 
 Supported Platforms 
@@ -19,10 +15,9 @@ Params
 
 api_key: SITE24X7APIKEY 
 
-Your API Key is available under the Site24x7 Add Server Monitor page. Log In and navigate to Home > New Monitor > Server Monitor. 
-Choose Server Monitor Type as Linux.
+Your API Key is available under the Site24x7 "Add Server Monitor" page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoing. 
 
-Site24x7 API key is unique for your account. Alternately API Key can also be generated from your Site24x7 account under Account > Generate API Key.
+Site24x7 API key is unique for your account. Alternate API Key can also be generated from your Site24x7 account under Admin > Developer > Device Key.
 
 proxy: NONE
 
@@ -31,26 +26,24 @@ Proxy server required to connect to the Site24x7 servers. Example : user:passwor
 
 Installation Steps
 ============
-
-    Ensure ansible is setup properly in your infrastructure.
-    Download the playbooks "site24x7-install.yml", "site24x7-status.yml" and "site24x7-uninstall.yml" from the "playbooks" folder to your server where ansible is setup.
-    Edit the file and make following changes:
-      Change the value of "hosts" field with the "hostname" or "groupname" of ansible connected servers where you would like to install the agent.
-      Change the value of api_key variable under "vars" field from SITE24X7APIKEY to the actual device key for your site24x7 account. Site24x7 Device key can be obtained from our portal.
-      Change the value of "proxy" field from "NONE" to the required value. Do not edit this value if no proxy is required.
-    Save the changes and close the file.
-    Now you can use the following command to execute the playbook and install the agent :
+1. Ensure ansible is setup properly in your infrastructure.
+2. Download the playbooks "site24x7-install.yml", "site24x7-status.yml" and "site24x7-uninstall.yml" from the "playbooks" folder to your server where ansible is setup.
+3. Edit the file and make following changes:
+      i. Change the value of "hosts" field with the "hostname" or "groupname" of ansible connected servers where you would like to install the agent.
+      ii. Change the value of api_key variable under "vars" field from SITE24X7APIKEY to the actual device key for your site24x7 account. Site24x7 Device key can be obtained from our portal.
+      iii. Change the value of "proxy" field from "NONE" to the required value. Do not edit this value if no proxy is required.
+4. Save the changes and close the file.
+5. Now you can use the following command to execute the playbook and install the agent :
       "ansible-playbook site24x7-install.yml"
-    Use following command to uninstall the agents installed in ansible connected servers:
+6. Use following command to uninstall the agents installed in ansible connected servers:
       "ansible-playbook site24x7-uninstall.yml"
-    Use following command to check the status of agents installed in ansible connected servers:
+7. Use following command to check the status of agents installed in ansible connected servers:
       "ansible-playbook -v site24x7-status.yml
-
-View your servers from your Site24x7 account. https://www.site24x7.com/login.html
+8. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
 
 Related Links
 =====
-* [Site24x7 Homepage] (http://www.site24x7.com)
+* [Site24x7 Server Monitoring] (https://www.site24x7.com/server-monitoring.html)
 * [Site24x7 Signup] (https://www.site24x7.com/signup.html?pack=5&l=en)
 * [Site24x7 Help Documentation] (https://www.site24x7.com/help/admin/adding-a-monitor/linux-server-monitoring.html)
 
