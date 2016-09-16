@@ -13,11 +13,11 @@ Redhat, Suse, Ubuntu
 Params
 ============
 
-api_key: SITE24X7APIKEY 
+device_key: SITE24X7DEVICEKEY 
 
-Your API Key is available under the Site24x7 "Add Server Monitor" page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoing. 
+Your device Key is available under the Site24x7 "Add Server Monitor" page. Log In and navigate to Home > Monitors > Click on the (+) icon > Linux Server Monitoing. 
 
-Site24x7 API key is unique for your account. Alternate API Key can also be generated from your Site24x7 account under Admin > Developer > Device Key.
+Site24x7 device key is unique for your account. Alternate device Key can also be generated from your Site24x7 account under Admin > Developer > Device Key.
 
 proxy: NONE
 
@@ -30,7 +30,7 @@ Installation Steps
 2. Download the playbooks "site24x7-install.yml", "site24x7-status.yml" and "site24x7-uninstall.yml" from the "playbooks" folder to your server where ansible is setup.
 3. Edit the file and make following changes:
       i. Change the value of "hosts" field with the "hostname" or "groupname" of ansible connected servers where you would like to install the agent.
-      ii. Change the value of api_key variable under "vars" field from SITE24X7APIKEY to the actual device key for your site24x7 account. Site24x7 Device key can be obtained from our portal.
+      ii. Change the value of device_key variable under "vars" field from SITE24X7DEVICEKEY to the actual device key for your site24x7 account. Site24x7 Device key can be obtained from our portal.
       iii. Change the value of "proxy" field from "NONE" to the required value. Do not edit this value if no proxy is required.
 4. Save the changes and close the file.
 5. Now you can use the following command to execute the playbook and install the agent :
