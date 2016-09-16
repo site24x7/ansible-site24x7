@@ -3,7 +3,7 @@
   hosts: hostname 		##Change this value to select desired hosts
   remote_user: root
   vars:
-     api_key: SITE24X7APIKEY    ##Change this value to the device key obtained from your site24x7 portal
+     device_key: SITE24X7DEVICEKEY    ##Change this value to the device key obtained from your site24x7 portal
      proxy: NONE		##Change this value to required proxy setting like user:password@proxyhost:proxyport
      
   tasks:
@@ -14,10 +14,10 @@
        file: path=Site24x7_Linux_64bit.install mode=0755
        when: ansible_machine == "x86_64"
      - name : Install 64 bit Site24x7 agent in the server
-       shell: ./Site24x7_Linux_64bit.install -i -key={{ api_key }} -f
+       shell: ./Site24x7_Linux_64bit.install -i -key={{ device_key }} -f
        when: (ansible_machine == "x86_64" and proxy == "NONE")
      - name : Install 64 bit Site24x7 agent in the server
-       shell: ./Site24x7_Linux_64bit.install -i -key={{ api_key }} -f -proxy={{ proxy }}
+       shell: ./Site24x7_Linux_64bit.install -i -key={{ device_key }} -f -proxy={{ proxy }}
        when: (ansible_machine == "x86_64" and proxy != "NONE")
      - service: name=site24x7monagent state=restarted
        when: ansible_machine == "x86_64"
@@ -28,10 +28,10 @@
        file: path=Site24x7_Linux_32bit.install mode=0755
        when: ansible_machine == "i386"
      - name : Install 32 bit Site24x7 agent in the server
-       shell: ./Site24x7_Linux_32bit.install -i -key={{ api_key }} -f
+       shell: ./Site24x7_Linux_32bit.install -i -key={{ device_key }} -f
        when: (ansible_machine == "i386" and proxy == "NONE")
      - name : Install 32 bit Site24x7 agent in the server
-       shell: ./Site24x7_Linux_32bit.install -i -key={{ api_key }} -f -proxy={{ proxy }}
+       shell: ./Site24x7_Linux_32bit.install -i -key={{ device_key }} -f -proxy={{ proxy }}
        when: (ansible_machine == "i386" and proxy != "NONE")
      - service: name=site24x7monagent state=restarted
        when: ansible_machine == "i386"
