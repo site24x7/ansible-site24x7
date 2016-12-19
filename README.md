@@ -35,11 +35,9 @@ Installation Steps
 4. Save the changes and close the file.
 5. Now you can use the following command to execute the playbook and install the agent :
       "ansible-playbook site24x7-install.yml"
-6. Use following command to uninstall the agents installed in ansible connected servers:
-      "ansible-playbook site24x7-uninstall.yml"
-7. Use following command to check the status of agents installed in ansible connected servers:
+6. Use following command to check the status of agents installed in ansible connected servers:
       "ansible-playbook -v site24x7-status.yml
-8. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
+7. View your servers from your Site24x7 account. https://www.site24x7.com/login.html
 
 Related Links
 =====
