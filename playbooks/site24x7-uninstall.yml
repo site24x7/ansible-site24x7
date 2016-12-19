@@ -4,4 +4,12 @@
   remote_user: root
   tasks:
      - name: Running uninstall agent command
-       shell: /opt/site24x7/monagent/bin/uninstall removes=/opt/site24x7/monagent/bin/monagent
+       shell: /opt/Site24x7_Linux_64bit.install -u 
+       args:
+         removes: /opt/site24x7/monagent/bin/monagent
+       when: ansible_machine == "x86_64"
+     - name: Running uninstall agent command
+       shell: /opt/Site24x7_Linux_32bit.install -u 
+       args:
+         removes: /opt/site24x7/monagent/bin/monagent
+       when: ansible_machine == "i386"
