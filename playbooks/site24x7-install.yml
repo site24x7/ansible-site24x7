@@ -35,3 +35,13 @@
        when: (ansible_machine == "i386" and proxy != "NONE")
      - service: name=site24x7monagent state=restarted
        when: ansible_machine == "i386"
+     - name: Deleting 64 bit install file
+       file: 
+         state: absent
+         path: /opt/Site24x7_Linux_64bit.install
+       when: ansible_machine == "x86_64"
+     - name: Deleting 32 bit install file
+       file: 
+         state: absent
+         path: /opt/Site24x7_Linux_32bit.install
+       when: ansible_machine == "i386"
