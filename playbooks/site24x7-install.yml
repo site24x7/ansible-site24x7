@@ -19,10 +19,10 @@
          mode: 0750
        when: ansible_machine == "x86_64" and not installed.stat.exists
      - name : Install 64 bit Site24x7 agent in the server
-       shell: /opt/Site24x7_Linux_64bit.install -i -key={{ device_key }}
+       shell: /opt/Site24x7_Linux_64bit.install -i -key={{ device_key }} -installer=ansible
        when: (ansible_machine == "x86_64" and proxy == "NONE" and not installed.stat.exists)
      - name : Install 64 bit Site24x7 agent in the server
-       shell: /opt/Site24x7_Linux_64bit.install -i -key={{ device_key }} -proxy={{ proxy }}
+       shell: /opt/Site24x7_Linux_64bit.install -i -key={{ device_key }} -installer=ansible -proxy={{ proxy }}
        when: (ansible_machine == "x86_64" and proxy != "NONE" and not installed.stat.exists)
      - service: name=site24x7monagent state=restarted
        when: ansible_machine == "x86_64" and not installed.stat.exists
@@ -33,10 +33,10 @@
          mode: 0750
        when: ansible_machine == "i386" and not installed.stat.exists
      - name : Install 32 bit Site24x7 agent in the server
-       shell: /opt/Site24x7_Linux_32bit.install -i -key={{ device_key }}
+       shell: /opt/Site24x7_Linux_32bit.install -i -key={{ device_key }} -installer=ansible
        when: (ansible_machine == "i386" and proxy == "NONE" and not installed.stat.exists)
      - name : Install 32 bit Site24x7 agent in the server
-       shell: /opt/Site24x7_Linux_32bit.install -i -key={{ device_key }} -proxy={{ proxy }}
+       shell: /opt/Site24x7_Linux_32bit.install -i -key={{ device_key }} -installer=ansible -proxy={{ proxy }}
        when: (ansible_machine == "i386" and proxy != "NONE" and not installed.stat.exists)
      - service: name=site24x7monagent state=restarted
        when: ansible_machine == "i386" and not installed.stat.exists
