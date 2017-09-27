@@ -1,0 +1,3 @@
+---
+- name: Uninstalling Site24x7 Linux Server Monitoring Agent
+  shell: /opt/site24x7/monagent/bin/uninstall
