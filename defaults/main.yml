@@ -1,0 +1,5 @@
+---
+site24x7_architecture: "{{ (ansible_machine == 'x86_64') | ternary('64','32') }}"
+site24x7_device_key: SITE24X7DEVICEKEY
+site24x7_proxy: "NONE"
+site24x7_additional_args: ""
