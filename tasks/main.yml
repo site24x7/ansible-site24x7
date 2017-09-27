@@ -1,8 +1,8 @@
 ---
 - name: Check linux server monitoring agent exists
-   stat:
-     path: /opt/site24x7/monagent
-   register: installed
+  stat:
+    path: /opt/site24x7/monagent
+  register: installed
 
 - name: Download Site24x7 agent from public URL
   get_url:
