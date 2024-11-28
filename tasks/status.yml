@@ -1,0 +1,3 @@
+---
+- name: Checking status of Site24x7 monitoring agent
+  shell: /etc/init.d/site24x7monagent status
