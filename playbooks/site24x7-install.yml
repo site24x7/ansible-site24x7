@@ -1,7 +1,7 @@
 ---
 - name: Install Site24x7 server monitoring agent
   hosts: hostname          ##Change this value to select desired hosts
-  remote_user: root
+  become: true
   
   vars:
      device_key: SITE24X7DEVICEKEY  ##Change this value to the device key obtained from your site24x7 portal
